@@ -10,13 +10,23 @@ The plan is simple:
 
 1. **Fork** this repository to your own GitHub account.
 2. **Clone** your fork to your computer.
-3. Make a copy of [`21_questions.txt`](21_questions.txt) and play a round of the
-   game by filling it in.
-4. **Add**, **commit**, and **push** your completed game sheet back to your fork.
-5. **Pull** to keep your local copy in sync.
+3. Play the game by **editing [`21_questions.txt`](21_questions.txt) directly** —
+   the two players take turns writing into the same file.
+4. Here's the key part: you **add, commit, and push** after *every single
+   question and every single answer*, and you **pull** before each of your turns
+   so you can see what the other player just wrote.
 
-By the time you've finished a game, you'll have used the core Git commands that
-power day-to-day software development.
+In other words, Git is how the two players talk to each other:
+
+- The **Guesser** writes a question → `add` → `commit` → `push`.
+- The **Host** does `pull` to see the question, writes the answer →
+  `add` → `commit` → `push`.
+- The **Guesser** does `pull` to see the answer, then writes the next question.
+- Repeat for all 21 questions, then the final guess and the reveal.
+
+By the time you've finished a game, you'll have run the core Git loop —
+**pull, edit, add, commit, push** — dozens of times, which is exactly the rhythm
+of day-to-day software development.
 
 ---
 
@@ -60,51 +70,104 @@ own personal copy of the repository under your account that you can freely edit.
 Download your fork from GitHub to your local machine:
 
 ```bash
-git clone https://github.com/<your-username>/21_questions.git
-cd 21_questions
-```
-
-### Add
-
-Stage the changes you want to save (here, your game sheet):
-
-```bash
-git add my_game.txt
-# or stage everything that changed:
-git add .
-```
-
-### Commit
-
-Save your staged changes to your local history with a descriptive message:
-
-```bash
-git commit -m "Play my first round of 21 questions"
-```
-
-### Push
-
-Upload your local commits to your fork on GitHub:
-
-```bash
-git push
+git clone https://github.com/<your-username>/github_practice_21_questions.git
+cd github_practice_21_questions
 ```
 
 ### Pull
 
-Download and merge the latest changes from GitHub into your local copy:
+Before each turn, download whatever the other player just wrote so your local
+copy is up to date:
 
 ```bash
 git pull
 ```
 
-**A typical workflow looks like this:**
+### Add
+
+After editing `21_questions.txt`, stage your change so Git knows you want to
+save it:
 
 ```bash
-git add my_game.txt
-git commit -m "Add my completed game sheet"
+git add 21_questions.txt
+```
+
+### Commit
+
+Save your staged change to your local history with a message describing what you
+just did:
+
+```bash
+git commit -m "Q3: Is it bigger than a microwave?"
+```
+
+### Push
+
+Upload your commit to GitHub so the other player can pull it:
+
+```bash
 git push
 ```
+
+---
+
+## Putting It Together: One Turn at a Time
+
+Every question and every answer is its own pull → edit → add → commit → push
+cycle. Here's a full exchange for question 3.
+
+**Guesser's turn — ask a question:**
+
+```bash
+git pull                                          # get the latest file
+# ...edit 21_questions.txt: write your question on line 3...
+git add 21_questions.txt
+git commit -m "Q3: Is it bigger than a microwave?"
+git push
+```
+
+**Host's turn — answer it:**
+
+```bash
+git pull                                          # see the new question
+# ...edit 21_questions.txt: check [x] Yes or [x] No on line 3...
+git add 21_questions.txt
+git commit -m "A3: Yes"
+git push
+```
+
+Then the Guesser pulls again and asks question 4. Repeat all the way to 21.
+
+---
+
+## The Final Guess and the Reveal
+
+When the Guesser is ready (any time up to question 21), the game ends with two
+last commits.
+
+**Guesser's turn — make the final guess:**
+
+```bash
+git pull
+# ...edit 21_questions.txt: fill in the "My guess is:" line...
+git add 21_questions.txt
+git commit -m "Final guess: a toaster"
+git push
+```
+
+**Host's turn — score it and reveal the secret:**
+
+```bash
+git pull
+# ...edit 21_questions.txt: check Correct/Incorrect and fill in
+#    "THE SECRET WAS:" to reveal the answer...
+git add 21_questions.txt
+git commit -m "Reveal: it was a toaster — correct!"
+git push
+```
+
+The Guesser does one last `git pull` to see the reveal. Game over — swap roles
+and play again!
 
 ---
 
