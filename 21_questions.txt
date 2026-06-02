@@ -18,7 +18,7 @@ Write your yes/no question on each line, then check the host's answer.
  1. A: [ ] Yes  [X ] No   Q: Is your place in America?
  2. A: [ ] Yes  [X ] No   Q: Is your place small?
  3. A: [X ] Yes  [ ] No   Q: Is your place far away from the school?
- 4. A: [ ] Yes  [ ] No   Q: Is it the bermuda triangle?
+ 4. A: [ X] Yes  [ ] No   Q: Is it the bermuda triangle?
  5. A: [ ] Yes  [ ] No   Q: 
  6. A: [ ] Yes  [ ] No   Q: 
  7. A: [ ] Yes  [ ] No   Q: 
@@ -41,8 +41,8 @@ Write your yes/no question on each line, then check the host's answer.
 ------------------------------------------
               FINAL GUESS
 ------------------------------------------
-My guess is: ______________________________________
+My guess is: __Bermuda Triangle ____________________________________
 
-RESULT:  [ ] Correct!   [ ] Incorrect
+RESULT:  [X ] Correct!   [ ] Incorrect
 
-THE SECRET WAS (host reveals): ____________________________
+THE SECRET WAS (host reveals): ___bermuda triangle_________________________
