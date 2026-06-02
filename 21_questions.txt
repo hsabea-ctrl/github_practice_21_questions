@@ -3,11 +3,11 @@
 ==========================================
 
 PLAYER (the one asking questions): Kenya____________________
-HOST   (the one with the secret):  ____________________
-DATE:                              ____________________
+HOST   (the one with the secret):  ____Sabea________________
+DATE:                              ____6/2/26________________
 
 
-SECRET CATEGORY (host fills in): [ ] Person  [ ] Place  [ ] Thing  [ ] Animal
+SECRET CATEGORY (host fills in): [ ] Person  [ X] Place  [ ] Thing  [ ] Animal
 
 
 ------------------------------------------
